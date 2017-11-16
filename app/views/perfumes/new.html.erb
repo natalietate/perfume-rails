@@ -1,0 +1,21 @@
+<h1>add new perfume</h1>
+
+<%= form_with(model: @perfume, local: true) do |f|  %>
+
+<% if @perfume.errors.any? %>
+  <p>One or more errors prevented the form from submitting:</p>
+  <ul>
+    <%= @perfume.errors.full_messages.each do |message|  %>
+      <li> <%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :maker %>
+  <%= f.text_field :maker %>
+  <br><br>
+  <%= f.submit %>
+<% end %>
